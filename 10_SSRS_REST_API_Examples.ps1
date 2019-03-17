@@ -13,45 +13,6 @@ $URI = "http://$SSRSServer/reports/api/v2.0"
 # Get Json
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
 
-# -------------------------------------------
-# Show all Webservice Methods using a browser
-# -------------------------------------------
-<#
-Start "http://localhost/reports/browse"
-
-#  All Methods
-Start "$URI"
-
-# Subscriptions:
-Start "$URI/subscriptions"
-
-# Reports
-Start "$URI/Reports"
-
-# KPIs
-Start "$URI/KPIs"
-
-# Folder Tree Structure
-Start "$URI/Folders"
-
-# Datasources
-Start "$URI/DataSources"
-
-# Datasets
-Start "$URI/DataSets"
-
-# Catalog Items
-Start "$URI/CatalogItems"
-
-# Schedules
-Start "$URI/Schedules"
-
-# System
-Start "$URI/System"
-
-# Me
-Start "$URI/Me"
-#>
 
 # Get SSRS Verison
 $SSRSVersion  = Invoke-RestMethod "$URI/system" -Method get -UseDefaultCredentials
@@ -72,7 +33,7 @@ $NewFolderJSON=
 {
     "Name":  "Reports2",
     "Description":  null,
-    "Path":  "/,
+    "Path":  "/",
     "Type":  "Folder",
     "Hidden":  false,
     "Size":  0,
@@ -85,7 +46,8 @@ $NewFolderJSON=
     "Content":  ""
 }
 '
-$myNewFolder = Invoke-RestMethod "$URI/Folders2" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
 $myNewFolder
 
 # Get Folder Info - does exist now
@@ -272,21 +234,12 @@ $rptNewRoleJSON=
           "Description": "May view report definitions."
         }
       ]
-    },
-    {
-        "GroupUserName":  "owner",
-        "Roles":  [
-                      {
-                          "Name":  "Browser",
-                          "Description":  "May view folders, reports and subscribe to reports."
-                      }
-                  ]
     }
   ]
 }
 '
 
-$rptChangePolicy = Invoke-RestMethod "$URI/Reports(Path='/Operations')/Policies" -Method put -ContentType 'application/json' -Body $rptNewRoleJSON -UseDefaultCredentials
+$rptChangePolicy = Invoke-RestMethod "$URI/Reports(Path='/Operations/Rest Demo')/Policies" -Method put -ContentType 'application/json' -Body $rptNewRoleJSON -UseDefaultCredentials
 $rptChangePolicy
 
 # Set New Policy - Revert to Inherited Rights
@@ -297,7 +250,7 @@ $rptNewRoleJSON=
 }
 '
 
-$rptChangePolicy = Invoke-RestMethod "$URI/Reports(Path='/Operations)/Policies" -Method put -ContentType 'application/json' -Body $rptNewRoleJSON -UseDefaultCredentials
+$rptChangePolicy = Invoke-RestMethod "$URI/Reports(Path='/Operations/Rest Demo)/Policies" -Method put -ContentType 'application/json' -Body $rptNewRoleJSON -UseDefaultCredentials
 $rptChangePolicy
 
 
@@ -347,7 +300,7 @@ $jsonRptParameter=
 
                          ],
         "DefaultValues":  [
-                              "2028-12-31T00:00:00.0000000"
+                              "2000-12-31T00:00:00.0000000"
                           ],
         "DefaultValuesIsNull":  false,
         "ErrorMessage":  null
@@ -452,7 +405,8 @@ Invoke-RestMethod "$URI/Reports($ReportGuid)/ParameterDefinitions" -Method patch
 # ---------------
 # Subscriptions
 # ---------------
-# Create Subscription on Paginated Report
+# Create Subscription on Paginated Report - Without SAVED Credentials 
+# "As User running the Report" = (No User is logged-in when run from a Subscription - AKA Agent Job)
 $json =
 '
 {
@@ -529,9 +483,10 @@ $json =
 '
 Invoke-RestMethod "$URI/Subscriptions" -Method Post -Body $json -ContentType 'application/json' -UseDefaultCredentials
 
-# Subscription File Share Credentials are NOT settable in the REST API Call, must set passwords in the GUI/Portal
 
-$MySubGuid = 'eec17b6f-b427-4d8f-b7c1-2d0f21792881'
+# Subscription File Share Credentials are NOT settable in the REST API Call, must set passwords in the GUI/Portal
+# DEMO = Get the Subscription GUID from the Portal URL
+$MySubGuid = '24482e7d-2236-47be-bf04-86eae0d2760c'
 
 # Get All Subscriptions
 $AllSubs = Invoke-RestMethod "$URI/Subscriptions" -Method get -UseDefaultCredentials
@@ -541,7 +496,7 @@ $AllSubs | convertto-json -Depth 4
 $mySub = Invoke-RestMethod "$URI/Subscriptions($MySubGuid)" -Method get -UseDefaultCredentials
 $mysub | ConvertTo-Json -Depth 4
 
-# Fire Sub
+# Fire Sub - MUST Set the Subscription File Output folder Username/Password First
 Invoke-RestMethod "$URI/Subscriptions($MySubGuid)/Model.Execute" -Method post -ContentType 'application/json' -UseDefaultCredentials
 
 
@@ -549,7 +504,7 @@ Invoke-RestMethod "$URI/Subscriptions($MySubGuid)/Model.Execute" -Method post -C
 $chgSubOwnerJSON=
 '
 {
-    "Owner":  "PF\\service.sql"
+    "Owner":  "Owner-PC\\Jimmy.Dean"
 }
 '
 Invoke-RestMethod "$URI/Subscriptions($MySubGuid)" -Method patch  -ContentType 'application/json' -Body $chgSubOwnerJSON -UseDefaultCredentials
@@ -613,6 +568,7 @@ Write-Output("There are {0} Mobile Reports" -f $myMobiles.'@odata.count')
 $response  = Invoke-RestMethod "$URI/CatalogItems" -Method get -UseDefaultCredentials
 $response.value | select id,name, Path, Type, ParentFolderID
 
+# ODATA Verbs
 # Get ID of Root Folder using ODATA Verbs FILTER CONTAINS
 $response  = Invoke-RestMethod "$URI/CatalogItems?%24filter=contains(Name,'/') and contains(Path,'/')" -Method get -UseDefaultCredentials
 $RootFolderID=$response.value | select -expandproperty ID
