@@ -12,6 +12,7 @@ $URI = "http://$SSRSServer/reports/api/v2.0"
 # Set TLS on SSL
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
 
+$Localhost = hostname
 
 # ---------------
 # Subscriptions
@@ -49,7 +50,7 @@ $json =
                               "ParameterValues":  [
                                                       {
                                                           "Name":  "PATH",
-                                                          "Value":  "\\\\owner-pc\\c$\\temp",
+                                                          "Value":  "\\\\'+$Localhost+'\\c$\\temp",
                                                           "IsValueFieldReference":  false
                                                       },
                                                       {
@@ -130,7 +131,7 @@ $json =
                               "ParameterValues":  [
                                                       {
                                                           "Name":  "PATH",
-                                                          "Value":  "\\\\owner-pc\\c$\\temp",
+                                                          "Value":  "\\\\'+$Localhost+'\\c$\\temp",
                                                           "IsValueFieldReference":  false
                                                       },
                                                       {
@@ -211,7 +212,7 @@ $json =
                               "ParameterValues":  [
                                                       {
                                                           "Name":  "PATH",
-                                                          "Value":  "\\\\owner-pc\\c$\\temp",
+                                                          "Value":  "\\\\'+$Localhost+'\\c$\\temp",
                                                           "IsValueFieldReference":  false
                                                       },
                                                       {
@@ -292,7 +293,7 @@ $json =
                               "ParameterValues":  [
                                                       {
                                                           "Name":  "PATH",
-                                                          "Value":  "\\\\owner-pc\\c$\\temp",
+                                                          "Value":  "\\\\'+$Localhost+'\\c$\\temp",
                                                           "IsValueFieldReference":  false
                                                       },
                                                       {
@@ -373,7 +374,7 @@ $json =
                               "ParameterValues":  [
                                                       {
                                                           "Name":  "PATH",
-                                                          "Value":  "\\\\owner-pc\\c$\\temp",
+                                                          "Value":  "\\\\'+$Localhost+'\\c$\\temp",
                                                           "IsValueFieldReference":  false
                                                       },
                                                       {
@@ -454,7 +455,7 @@ $json =
                               "ParameterValues":  [
                                                       {
                                                           "Name":  "PATH",
-                                                          "Value":  "\\\\owner-pc\\c$\\temp",
+                                                          "Value":  "\\\\'+$Localhost+'\\c$\\temp",
                                                           "IsValueFieldReference":  false
                                                       },
                                                       {
@@ -535,7 +536,7 @@ $json =
                               "ParameterValues":  [
                                                       {
                                                           "Name":  "PATH",
-                                                          "Value":  "\\\\owner-pc\\c$\\temp",
+                                                          "Value":  "\\\\'+$Localhost+'\\c$\\temp",
                                                           "IsValueFieldReference":  false
                                                       },
                                                       {
@@ -616,7 +617,7 @@ $json =
                               "ParameterValues":  [
                                                       {
                                                           "Name":  "PATH",
-                                                          "Value":  "\\\\owner-pc\\c$\\temp",
+                                                          "Value":  "\\\\'+$Localhost+'\\c$\\temp",
                                                           "IsValueFieldReference":  false
                                                       },
                                                       {
@@ -697,7 +698,7 @@ $json =
                               "ParameterValues":  [
                                                       {
                                                           "Name":  "PATH",
-                                                          "Value":  "\\\\owner-pc\\c$\\temp",
+                                                          "Value":  "\\\\'+$Localhost+'\\c$\\temp",
                                                           "IsValueFieldReference":  false
                                                       },
                                                       {
@@ -778,7 +779,7 @@ $json =
                               "ParameterValues":  [
                                                       {
                                                           "Name":  "PATH",
-                                                          "Value":  "\\\\owner-pc\\c$\\temp",
+                                                          "Value":  "\\\\'+$Localhost+'\\c$\\temp",
                                                           "IsValueFieldReference":  false
                                                       },
                                                       {
