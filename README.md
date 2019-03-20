@@ -8,7 +8,7 @@ https://www.sqlsaturday.com/859/Sessions/Details.aspx?sid=89001
 * Create Folders
 * Upload Reports
 * Change Permissions
-* Create and Update Subscriptions
+* Creating, Updating and Firing Off Subscriptions
 * Update Report Datasource Credentials
 * Swagger API Docs Intro
 * All Code is Powershell
