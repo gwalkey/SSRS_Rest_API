@@ -1,0 +1,52 @@
+{
+    "@odata.context":  "http://localhost/reports/api/v2.0/$metadata#Kpis/$entity",
+    "Name":  "Battery Charge",
+    "Description":  null,
+    "Path":  "/Battery Charge",
+    "Type":  "Kpi",
+    "Hidden":  false,
+    "IsFavorite":  false,
+    "Roles":  [
+
+              ],
+    "ContentType":  null,
+    "Content":  "",
+    "ValueFormat":  "General",
+    "Visualization":  "Bar",
+    "DrillthroughTarget":  null,
+    "Currency":  null,
+    "Values":  {
+                   "Value":  "100",
+                   "Goal":  null,
+                   "Status":  null,
+                   "TrendSet":  [
+                                    9.0,
+                                    4.0,
+                                    7.0,
+                                    2.0,
+                                    3.0,
+                                    2.0,
+                                    7.0,
+                                    5.0
+                                ]
+               },
+    "Data":  {
+                 "Value":  {
+                               "@odata.type":  "#Model.KpiSharedDataItem",
+                               "Type":  "Shared",
+                               "Path":  "/Datasets/OSMetrics",
+                               "Parameters":  [
+
+                                              ],
+                               "Aggregation":  "First",
+                               "Column":  "Value"
+                           },
+                 "Goal":  null,
+                 "Status":  null,
+                 "TrendSet":  {
+                                  "@odata.type":  "#Model.KpiStaticDataItem",
+                                  "Type":  "Static",
+                                  "Value":  "[9.0,4.0,7.0,2.0,3.0,2.0,7.0,5.0]"
+                              }
+             }
+}
