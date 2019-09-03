@@ -1,14 +1,11 @@
 # SQL_Saturday_SSRS_Rest_Demo
-SSRS Rest API Demo
-
-This Code was first presented at SQL Saturday Tampa 2019 "The SSRS 2017 Restful API"
-
-https://www.sqlsaturday.com/859/Sessions/Details.aspx?sid=89001
+SSRS Rest API Usage Examples
 
 * Create Folders
 * Upload Reports
 * Change Permissions
 * Creating, Updating and Firing Off Subscriptions
 * Update Report Datasource Credentials
+* Update Subscription DataSource Credentials 
 * Swagger API Docs Intro
 * All Code is Powershell
