@@ -1,4 +1,4 @@
-###Steps to Create the BatteryLevel KPI###
+### Steps to Create the BatteryLevel KPI
 
 1) Create a SQL Server Database with SQL Script *1 - Create Database.sql*
 2) Create Table in database with SQL script *2 - Create Table.sql*
