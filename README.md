@@ -1,4 +1,4 @@
-# SQL_Saturday_SSRS_Rest_Demo
+# SQL_Saturday_SSRS_Rest_API_Demo
 SSRS Rest API Usage Examples
 
 * Create Folders
