@@ -6,6 +6,5 @@ SSRS Rest API Usage Examples
 * Change Permissions
 * Creating, Updating and Firing Off Subscriptions
 * Update Report Datasource Credentials
-* Update Subscription DataSource Credentials 
 * Swagger API Docs Intro
 * All Code is Powershell
