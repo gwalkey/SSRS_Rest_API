@@ -6,6 +6,7 @@
 4) Create a work folder C:\PSScripts and place the Powershell script there
 5) Make sure the SQL Agent Job is updating the Metrics SQL table (SSMS)
 6) Upload the KPI using a modified version of the demo Powershell script **02_SSRS_REST_Deploy_Reports_PBIX_Mobile_KPI.ps1**
+
 (you cannot upload KPI JSON fragments straight into the SSRS Portal)
 7) Create a Shared Datasource in the SSRS Portal (The API does not support creating DataSources), and connect it to 
 the Metrics Table with your own credentials (Windows or SQL Auth login and User) and verify the connection works.
