@@ -10,4 +10,5 @@
 7) Create a Shared Datasource in the SSRS Portal (The API does not support creating DataSources), and connect it to 
 the Metrics Table with your own credentials (Windows or SQL Auth login and User) and verify the connection works.
 8) Upload the SharedDataset **OSMetrics.rsd**
-Now the KPI should work and read from the SQL Table
+
+### Now the KPI should work and read from the SQL Table
