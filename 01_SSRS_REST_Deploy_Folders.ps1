@@ -27,7 +27,87 @@ $NewFolderJSON=
 '
 {
     "Name":  "Power BI Reports",
-    "Description":  null,
+    "Path":  "/",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "Power BI Reports"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Power BI Reports')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+$NewFolderJSON=
+'
+{
+    "Name":  "SQL Alerts",
+    "Path":  "/",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "SQL Alerts Dashboards"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/SQL Alerts')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+
+$NewFolderJSON=
+'
+{
+    "Name":  "RDL Reports",
+    "Path":  "/",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "Regular Paginated Reports"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/RDL Reports')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+$NewFolderJSON=
+'
+{
+    "Name":  "Weapons Systems",
+    "Description":  "",
     "Path":  "/",
     "Type":  "Folder",
     "Hidden":  false,
@@ -42,15 +122,147 @@ $NewFolderJSON=
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "SciFi Users Manual"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Weapons Systems')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+$NewFolderJSON=
+'
+{
+    "Name":  "Neuralizer",
+    "Path":  "/Weapons Systems",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "MIB Standard Issue"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Weapons Systems/Neuralizer')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+
+$NewFolderJSON=
+'
+{
+    "Name":  "Phaser",
+    "Description":  null,
+    "Path":  "/Weapons Systems",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false,
+    "Roles":  [
+
+              ],
+    "ContentType":  null,
+    "Content":  ""
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "Handheld"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Weapons Systems/Phaser')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+
+$NewFolderJSON=
+'
+{
+    "Name":  "Photon Torpedos",
+    "Description":  null,
+    "Path":  "/Weapons Systems",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false,
+    "Roles":  [
+
+              ],
+    "ContentType":  null,
+    "Content":  ""
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "Variable Yield"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Weapons Systems/Photon Torpedos')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+
+$NewFolderJSON=
+'
+{
+    "Name":  "Quantum Torpedos",
+    "Path":  "/Weapons Systems",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "For Borg Spheres and Cubes"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Weapons Systems/Quantum Torpedos')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
 
 
 
 $NewFolderJSON=
 '
 {
-    "Name":  "Reports",
+    "Name":  "Spatial Mines",
     "Description":  null,
-    "Path":  "/",
+    "Path":  "/Weapons Systems",
     "Type":  "Folder",
     "Hidden":  false,
     "Size":  0,
@@ -64,88 +276,105 @@ $NewFolderJSON=
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "Blows Holes in Ships"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Weapons Systems/Spatial Mines')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
 
 
 $NewFolderJSON=
 '
 {
     "Name":  "Jacketed Protons",
-    "Description":  null,
-    "Path":  "/",
+    "Path":  "/Weapons Systems",
     "Type":  "Folder",
     "Hidden":  false,
     "Size":  0,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "Dowd Ghost Ship Weapon"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Weapons Systems/Jacketed Protons')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+
+
+$NewFolderJSON=
+'
+{
+    "Name":  "3D RailGun",
+    "Path":  "/Weapons Systems",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "Ferengi Product Development Branch"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Weapons Systems/3D Railgun')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
 
 
 $NewFolderJSON=
 '
 {
     "Name":  "Hyperdrive Spares",
-    "Description":  null,
     "Path":  "/",
     "Type":  "Folder",
     "Hidden":  false,
     "Size":  0,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
 
-$NewFolderJSON=
+# Update Folder Description
+$JsonProperty=
 '
-{
-    "Name":  "Klingon Treaties",
-    "Description":  null,
-    "Path":  "/",
-    "Type":  "Folder",
-    "Hidden":  false,
-    "Size":  0,
-    "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
+[
+    {
+       "Name": "Description",
+       "Value": "Tatooine Resellers Association"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Hyperdrive Spares')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
 
-              ],
-    "ContentType":  null,
-    "Content":  ""
-}
-'
-$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
 
-$NewFolderJSON=
-'
-{
-    "Name":  "Khittomer",
-    "Description":  null,
-    "Path":  "/Klingon Treaties",
-    "Type":  "Folder",
-    "Hidden":  false,
-    "Size":  0,
-    "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
-}
-'
-$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
 
 $NewFolderJSON=
 '
@@ -172,99 +401,177 @@ $NewFolderJSON=
 '
 {
     "Name":  "Operations",
-    "Description":  null,
     "Path":  "/",
     "Type":  "Folder",
     "Hidden":  false,
     "Size":  0,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "Burn Notice"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Operations')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+
+
+$NewFolderJSON=
+'
+{
+    "Name":  "Michael Westin",
+    "Path":  "/Operations",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "I used to be a Spy"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Operations/Michael Westin')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+
+
+$NewFolderJSON=
+'
+{
+    "Name":  "Victor",
+    "Path":  "/Operations",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "Daniel Jackson from Stargate SG-1"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Operations/Victor')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+
+$NewFolderJSON=
+'
+{
+    "Name":  "Blake",
+    "Path":  "/Operations",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "Cigar chompin Baddie"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Operations/Blake')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+
+$NewFolderJSON=
+'
+{
+    "Name":  "Carla",
+    "Path":  "/Operations",
+    "Type":  "Folder",
+    "Hidden":  false,
+    "Size":  0,
+    "ParentFolderId":  null,
+    "IsFavorite":  false
+}
+'
+$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+
+# Update Folder Description
+$JsonProperty=
+'
+[
+    {
+       "Name": "Description",
+       "Value": "Retired Operative"
+    }
+]
+'
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Operations/Carla')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
+
+
 
 $NewFolderJSON=
 '
 {
     "Name":  "Fusion Reactors",
-    "Description":  null,
     "Path":  "/",
     "Type":  "Folder",
     "Hidden":  false,
     "Size":  0,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
 
-# Add New Folder /Operations/Center 1
-$NewFolderJSON=
+# Update Folder Description
+$JsonProperty=
 '
-{
-    "Name":  "Center 1",
-    "Description":  null,
-    "Path":  "/Operations",
-    "Type":  "Folder",
-    "Hidden":  false,
-    "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
-}
+[
+    {
+       "Name": "Description",
+       "Value": "1.21 Gigawatts"
+    }
+]
 '
-$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
-
-# Add New Folder /Operations/Center 2
-$NewFolderJSON=
-'
-{
-    "Name":  "Center 2",
-    "Description":  null,
-    "Path":  "/Operations",
-    "Type":  "Folder",
-    "Hidden":  false,
-    "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
-}
-'
-$myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
+$rptProps= Invoke-RestMethod "$URI/Folders(path='/Fusion Reactors')/Properties" -Method put  -ContentType 'application/json' -Body $JsonProperty -UseDefaultCredentials
 
 
 $NewFolderJSON=
 '
 {
     "Name":  "Avengers",
-    "Description":  null,
     "Path":  "/",
     "Type":  "Folder",
     "Hidden":  false,
     "Size":  0,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -273,17 +580,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Iron Man",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -292,17 +593,12 @@ $NewFolderJSON=
 '
 {
     "Name":  "Captain America",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
+    "IsFavorite":  false
 
-              ],
-    "ContentType":  null,
-    "Content":  ""
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -311,17 +607,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Doctor Strange",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -330,17 +620,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Black Widow",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -349,17 +633,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Gamora",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -368,17 +646,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Star Lord",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -387,17 +659,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Rocket",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -406,17 +672,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Cute Newt Groot",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -425,17 +685,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Loki",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -444,17 +698,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Vision",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -463,17 +711,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Black Panther",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -482,17 +724,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "SpiderMan",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -501,17 +737,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Thor",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -520,17 +750,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "The Hulk Insert",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -539,17 +763,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "Thanos",
-    "Description":  null,
     "Path":  "/Avengers",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -559,17 +777,11 @@ $NewFolderJSON=
 '
 {
     "Name":  "100 Folders",
-    "Description":  null,
     "Path":  "/",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
@@ -577,25 +789,16 @@ $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'appli
 $FolderJSON= '
 {
     "Name":  "VVV",
-    "Description":  null,
     "Path":  "/100 Folders",
     "Type":  "Folder",
     "Hidden":  false,
     "ParentFolderId":  null,
-    "IsFavorite":  false,
-    "Roles":  [
-
-              ],
-    "ContentType":  null,
-    "Content":  ""
+    "IsFavorite":  false
 }
 '
 1..100 | foreach {
-    $_
-    $NewFolderJSON= $FolderJSON.replace("VVV",$_)
+    "Center $_"
+    $NewFolderJSON= $FolderJSON.replace("VVV","Center $_")
     $myNewFolder = Invoke-RestMethod "$URI/Folders" -Method post -ContentType 'application/json' -Body $NewFolderJSON -UseDefaultCredentials
 }
 
-
-$AllSubs = Invoke-RestMethod "$URI/Folders" -Method get -UseDefaultCredentials
-$AllSubs.value | select path| sort path
